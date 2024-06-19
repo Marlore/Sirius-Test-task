@@ -30,8 +30,10 @@ namespace App.Desktop.Model
                 connection.Open();
                 using (SqlDataAdapter adapter = new SqlDataAdapter(getTableExpression,connection))
                 {
-                    adapter.Fill(employeeRepository.ListOfEmployees);                   
+                    adapter.Fill(employeeRepository.ListOfEmployees);    
+                    connection.Close();
                 }
+
             }
         }
 
